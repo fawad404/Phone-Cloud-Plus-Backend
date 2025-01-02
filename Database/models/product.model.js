@@ -9,11 +9,11 @@ const productSchema = new Schema(
       trim: true,
       minLength: [3, "Too Short product Name"],
     },
-    imgCover: {
-      type: String,
-    },
-    images: {
-      type: [String],
+    price: {
+      type: Number,
+      default: 0,
+      min: 0,
+      required: true,
     },
     description: {
       type: String,
@@ -22,11 +22,11 @@ const productSchema = new Schema(
       required: true,
       trim: true,
     },
-    price: {
-      type: Number,
-      default: 0,
-      min: 0,
-      required: true,
+    imgCover: {
+      type: String,
+    },
+    images: {
+      type: [String],
     },
     priceAfterDiscount: {
       type: Number,
@@ -42,16 +42,6 @@ const productSchema = new Schema(
       type: Number,
       default: 0,
       min: 0,
-    },
-    category: {
-      type: Schema.ObjectId,
-      ref: "category",
-      required: true,
-    },
-    subcategory: {
-      type: Schema.ObjectId,
-      ref: "subcategory",
-      required: true,
     },
     brand: {
       type: Schema.ObjectId,
