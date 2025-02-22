@@ -65,9 +65,9 @@ productSchema.post('init',function(doc){
 
   if(doc.imgCover && doc.images){
 
-    doc.imgCover = `${process.env.BASE_URL}products/${doc.imgCover}`
+    doc.imgCover = `${doc.imgCover}`
     doc.images = doc.images.map((ele)=>{
-     return `${process.env.BASE_URL}products/${ele}`
+     return `${ele}`
     })
   }
 
